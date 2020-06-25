@@ -1,0 +1,61 @@
+﻿@model BEUProyecto.Registro
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<div class="alert-warning">
+    <h2>Detalles del Registro</h2>
+</div>
+
+<div class="alert-warning">
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Aporte.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Aporte.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Evento.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Evento.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Voluntario.nombres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Voluntario.nombres)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.idregistro }) |
+    @Html.ActionLink("Regresar a la lista", "Index")
+</p>

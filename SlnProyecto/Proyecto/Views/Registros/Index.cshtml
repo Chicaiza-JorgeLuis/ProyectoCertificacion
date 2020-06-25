@@ -1,0 +1,65 @@
+﻿@model IEnumerable<BEUProyecto.Registro>
+
+@{
+    ViewBag.Title = "Lista de registros";
+}
+
+<h2>Lista de registros</h2>
+
+<p>
+    @Html.ActionLink("Crear Registro", "Create")
+</p>
+
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <tr class="active">
+            <th>
+                @Html.DisplayNameFor(model => model.fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.estado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Aporte.descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Evento.nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Voluntario.nombres)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fecha)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.estado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Aporte.descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Evento.nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Voluntario.nombres)
+                </td>
+                <td>
+           
+
+                    @Html.ActionLink("  ", "Edit", new { id = item.idregistro }, htmlAttributes: new { @class = "btn btn-sm btn-warning glyphicon glyphicon-pencil", @title = "Editar" })
+                    @Html.ActionLink("  ", "Details", new { id = item.idregistro}, htmlAttributes: new { @class = "btn btn-sm btn-primary glyphicon glyphicon-search", @title = "Ver" })
+                    @Html.ActionLink("  ", "Delete", new { id = item.idregistro }, htmlAttributes: new { @class = "btn btn-sm btn-danger glyphicon glyphicon-trash", @title = "Borrar" })
+
+
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

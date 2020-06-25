@@ -1,0 +1,12 @@
+C:\Users\usuario\source\repos\SlnProyecto\BEUProyecto\bin\Debug\BEUProyecto.dll.config
+C:\Users\usuario\source\repos\SlnProyecto\BEUProyecto\bin\Debug\BEUProyecto.dll
+C:\Users\usuario\source\repos\SlnProyecto\BEUProyecto\bin\Debug\BEUProyecto.pdb
+C:\Users\usuario\source\repos\SlnProyecto\BEUProyecto\bin\Debug\EntityFramework.dll
+C:\Users\usuario\source\repos\SlnProyecto\BEUProyecto\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\usuario\source\repos\SlnProyecto\BEUProyecto\bin\Debug\EntityFramework.xml
+C:\Users\usuario\source\repos\SlnProyecto\BEUProyecto\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\usuario\source\repos\SlnProyecto\BEUProyecto\obj\Debug\BEUProyecto.csproj.CoreCompileInputs.cache
+C:\Users\usuario\source\repos\SlnProyecto\BEUProyecto\obj\Debug\BEUProyecto.csproj.CopyComplete
+C:\Users\usuario\source\repos\SlnProyecto\BEUProyecto\obj\Debug\BEUProyecto.dll
+C:\Users\usuario\source\repos\SlnProyecto\BEUProyecto\obj\Debug\BEUProyecto.pdb
+C:\Users\usuario\source\repos\SlnProyecto\BEUProyecto\obj\Debug\BEUProyecto.csprojAssemblyReference.cache

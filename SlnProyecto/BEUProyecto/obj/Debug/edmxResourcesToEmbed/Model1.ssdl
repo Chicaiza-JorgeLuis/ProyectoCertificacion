@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Aporte">
+    <Key>
+      <PropertyRef Name="idaporte" />
+    </Key>
+    <Property Name="idaporte" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="100" />
+    <Property Name="tiempo_actividad" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Categoria">
+    <Key>
+      <PropertyRef Name="idcategoria" />
+    </Key>
+    <Property Name="idcategoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Evento">
+    <Key>
+      <PropertyRef Name="idevento" />
+    </Key>
+    <Property Name="idevento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" />
+    <Property Name="fecha_inicio" Type="datetime" />
+    <Property Name="fecha_final" Type="datetime" />
+    <Property Name="organizador" Type="varchar" MaxLength="50" />
+    <Property Name="idcategoria" Type="int" />
+  </EntityType>
+  <EntityType Name="Registro">
+    <Key>
+      <PropertyRef Name="idregistro" />
+    </Key>
+    <Property Name="idregistro" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fecha" Type="datetime" />
+    <Property Name="estado" Type="varchar" MaxLength="50" />
+    <Property Name="idvoluntario" Type="int" />
+    <Property Name="idaporte" Type="int" />
+    <Property Name="idevento" Type="int" />
+  </EntityType>
+  <EntityType Name="Voluntario">
+    <Key>
+      <PropertyRef Name="idvoluntario" />
+    </Key>
+    <Property Name="idvoluntario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombres" Type="varchar" MaxLength="50" />
+    <Property Name="apellidos" Type="varchar" MaxLength="50" />
+    <Property Name="cedula" Type="nchar" MaxLength="15" />
+    <Property Name="telefono" Type="nchar" MaxLength="10" />
+    <Property Name="fecha_nacimiento" Type="datetime" />
+    <Property Name="direccion" Type="varchar" MaxLength="100" />
+    <Property Name="sexo" Type="nchar" MaxLength="1" />
+  </EntityType>
+  <Association Name="FK_Evento_Categoria">
+    <End Role="Categoria" Type="Self.Categoria" Multiplicity="0..1" />
+    <End Role="Evento" Type="Self.Evento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categoria">
+        <PropertyRef Name="idcategoria" />
+      </Principal>
+      <Dependent Role="Evento">
+        <PropertyRef Name="idcategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Registro_Aporte">
+    <End Role="Aporte" Type="Self.Aporte" Multiplicity="0..1" />
+    <End Role="Registro" Type="Self.Registro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Aporte">
+        <PropertyRef Name="idaporte" />
+      </Principal>
+      <Dependent Role="Registro">
+        <PropertyRef Name="idaporte" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Registro_Evento">
+    <End Role="Evento" Type="Self.Evento" Multiplicity="0..1" />
+    <End Role="Registro" Type="Self.Registro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Evento">
+        <PropertyRef Name="idevento" />
+      </Principal>
+      <Dependent Role="Registro">
+        <PropertyRef Name="idevento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Registro_Voluntario">
+    <End Role="Voluntario" Type="Self.Voluntario" Multiplicity="0..1" />
+    <End Role="Registro" Type="Self.Registro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Voluntario">
+        <PropertyRef Name="idvoluntario" />
+      </Principal>
+      <Dependent Role="Registro">
+        <PropertyRef Name="idvoluntario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DBModelStoreContainer">
+    <EntitySet Name="Aporte" EntityType="Self.Aporte" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Categoria" EntityType="Self.Categoria" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Evento" EntityType="Self.Evento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Registro" EntityType="Self.Registro" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Voluntario" EntityType="Self.Voluntario" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Evento_Categoria" Association="Self.FK_Evento_Categoria">
+      <End Role="Categoria" EntitySet="Categoria" />
+      <End Role="Evento" EntitySet="Evento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Registro_Aporte" Association="Self.FK_Registro_Aporte">
+      <End Role="Aporte" EntitySet="Aporte" />
+      <End Role="Registro" EntitySet="Registro" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Registro_Evento" Association="Self.FK_Registro_Evento">
+      <End Role="Evento" EntitySet="Evento" />
+      <End Role="Registro" EntitySet="Registro" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Registro_Voluntario" Association="Self.FK_Registro_Voluntario">
+      <End Role="Voluntario" EntitySet="Voluntario" />
+      <End Role="Registro" EntitySet="Registro" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,60 @@
+﻿@model BEUProyecto.Evento
+
+@{
+    ViewBag.Title = "Details";
+}
+
+    <div class="alert-warning">
+        <h2>Detalles del Evento</h2>
+    </div>
+
+<div class="alert-warning">
+  
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_inicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_inicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_final)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_final)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.organizador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.organizador)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Categoria.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categoria.nombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.idevento }) |
+    @Html.ActionLink("Regresar a la lista", "Index")
+</p>

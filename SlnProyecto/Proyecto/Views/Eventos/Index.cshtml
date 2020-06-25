@@ -1,0 +1,61 @@
+﻿@model IEnumerable<BEUProyecto.Evento>
+
+@{
+    ViewBag.Title = "Lista de  eventos";
+}
+
+<h2>Lista de eventos</h2>
+
+<p>
+    @Html.ActionLink("Crear Evento", "Create")
+</p>
+<div class="table-responsive">
+    <table class="table table-bordered" >
+        <tr class="info">
+            <th>
+                @Html.DisplayNameFor(model => model.nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fecha_inicio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fecha_final)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.organizador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Categoria.nombre)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fecha_inicio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fecha_final)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.organizador)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Categoria.nombre)
+                </td>
+                <td>
+                   
+                    @Html.ActionLink("  ", "Details", new { id = item.idevento }, htmlAttributes: new { @class = "btn btn-sm btn-primary glyphicon glyphicon-search", @title = "Ver" })
+                    @Html.ActionLink("  ", "Edit", new { id = item.idevento }, htmlAttributes: new { @class = "btn btn-sm btn-warning glyphicon glyphicon-pencil", @title = "Editar" })
+                    @Html.ActionLink("  ", "Delete", new { id = item.idevento }, htmlAttributes: new { @class = "btn btn-sm btn-danger glyphicon glyphicon-trash", @title = "Borrar" })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

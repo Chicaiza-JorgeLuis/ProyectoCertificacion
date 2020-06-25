@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="Aporte">
+      <EntityTypeMapping TypeName="DBModel.Aporte">
+        <MappingFragment StoreEntitySet="Aporte">
+          <ScalarProperty Name="idaporte" ColumnName="idaporte" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="tiempo_actividad" ColumnName="tiempo_actividad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categoria">
+      <EntityTypeMapping TypeName="DBModel.Categoria">
+        <MappingFragment StoreEntitySet="Categoria">
+          <ScalarProperty Name="idcategoria" ColumnName="idcategoria" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Evento">
+      <EntityTypeMapping TypeName="DBModel.Evento">
+        <MappingFragment StoreEntitySet="Evento">
+          <ScalarProperty Name="idevento" ColumnName="idevento" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="fecha_inicio" ColumnName="fecha_inicio" />
+          <ScalarProperty Name="fecha_final" ColumnName="fecha_final" />
+          <ScalarProperty Name="organizador" ColumnName="organizador" />
+          <ScalarProperty Name="idcategoria" ColumnName="idcategoria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Registro">
+      <EntityTypeMapping TypeName="DBModel.Registro">
+        <MappingFragment StoreEntitySet="Registro">
+          <ScalarProperty Name="idregistro" ColumnName="idregistro" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="idvoluntario" ColumnName="idvoluntario" />
+          <ScalarProperty Name="idaporte" ColumnName="idaporte" />
+          <ScalarProperty Name="idevento" ColumnName="idevento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Voluntario">
+      <EntityTypeMapping TypeName="DBModel.Voluntario">
+        <MappingFragment StoreEntitySet="Voluntario">
+          <ScalarProperty Name="idvoluntario" ColumnName="idvoluntario" />
+          <ScalarProperty Name="nombres" ColumnName="nombres" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+          <ScalarProperty Name="cedula" ColumnName="cedula" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

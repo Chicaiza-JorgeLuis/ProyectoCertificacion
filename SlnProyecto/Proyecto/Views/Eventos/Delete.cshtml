@@ -1,0 +1,65 @@
+﻿@model BEUProyecto.Evento
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="alert-danger">
+    <h2>¿Quiere eliminar este evento?</h2>
+</div>
+<div class="alert-danger">
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_inicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_inicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_final)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_final)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.organizador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.organizador)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Categoria.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categoria.nombre)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> <br />
+            @Html.ActionLink("Regresar a la lista", "Index")
+        </div>
+    }
+</div>
